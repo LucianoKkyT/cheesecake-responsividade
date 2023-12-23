@@ -1,0 +1,114 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+  font-family: 'Source Serif';
+  font-size: 62.5%;
+}
+
+body {
+  color: #A54328;
+  font-size: 1.6rem;
+}
+
+img {
+  width: 100%;
+  margin-block: 3.2rem;
+}
+
+main {
+  max-width: 32rem;
+  margin-inline: auto;
+  padding: 5.6rem 4rem;
+  box-sizing: content-box;
+
+  /*Para lidarmos com duas caixas dentro de uma*/
+  /*Primeiro, transformamos ela em display-flex. Ela ficará uma ao lado da outra.
+  Depois, colocamos novamente em forma de coluna, com o flex-direction: collumn.
+  Depois, demos o espaçamento desejado através do gap.*/
+
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+
+button {
+  font-family: 'Source Serif 4';
+  background-color: #A54328;
+  border: none;
+  border-radius: 0.6rem;
+  color: white;
+  padding: 0.8rem 1.2rem; /*0.8 cima e baixo e 1.2 nas laterais*/
+  margin-top: 3.2rem;
+}
+
+h1, h2 {
+  /* clamp(min, ideal, alto) */
+  font-size: clamp(2.8rem, 2vw + 1rem, 4rem);
+  line-height: clamp(3.6rem, 2vw + 1rem, 5rem);
+}
+
+h2 {
+  margin-bottom: 3.2rem;
+}
+
+p, li, strong {
+  font-size: clamp(1.4rem, 1vw + 0.4rem, 2rem);
+  line-height: clamp(1.8rem, 1vw + 1rem, 22.5rem);
+}
+
+ul, ol {
+ padding-left: 2.4rem;
+}
+
+ul {
+  margin-bottom: 2.4rem;
+}
+
+@media(min-width: 1120px) { /*Um tablet tem 768px. Colocamos um pouquinho acima*/
+  main {
+    flex-direction: row;/*Mudamos a direção de column para row. Coluna para linha*/
+    max-width: fit-content;/*Encaixe no tamanho do conteúdo*/
+    gap: 16rem;
+    padding: 7rem 6rem;
+  }
+
+  body {
+    background: url(./assets/old-paper-texture-beige-craft-cardboard-vintage-canvas-surface\ 1.png), lightgray 50% / cover no-repeat;
+  }
+
+  .recipe {
+    max-width: 43.5rem;
+  }
+
+  .ingredients {
+    max-width: 52.5rem;
+  }
+/*
+  h1, h2 {
+    font-size: 4rem;
+    line-height: 5rem;
+
+  }
+
+  p, li, strong {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+*/
+  button {
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+
+  }
+  
+}
+
+
+
